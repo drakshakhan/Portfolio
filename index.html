@@ -17,7 +17,7 @@
             --primary-gradient: linear-gradient(135deg, #00ff41 0%, #00d4ff 100%);; 
             --secondary-gradient: linear-gradient(135deg, #57f7ff 0%, #008dc4 100%);
             --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --text-gradient: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            --text-gradient: linear-gradient(135deg, #000, #0ae154, #26d7ff, #00ff34, #feca57);
             --bright-gradient: linear-gradient(135deg, #00ff41 0%, #00ff41 50%, #00ff41 100%);
             --neon-gradient: linear-gradient(135deg, #00dbff 0%, #00ff34 100%);
             --dark-bg: #0a0a0a;
@@ -364,7 +364,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 3rem;
-            background: var(--bright-gradient);
+            background: var(--text-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: bold;
@@ -505,12 +505,13 @@
         }
 
         .skill-tag {
-            background: var(--primary-gradient);
-            color: white;
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.9rem;
             transition: transform 0.2s ease;
+              border: 1px solid rgba(0, 212, 255, 0.3);
         }
 
         .skill-tag:hover {
@@ -613,14 +614,20 @@
             text-align: center;
             background: var(--card-bg);
             border-radius: 15px;
-            padding: 3rem;
-            margin: 2rem 0;
-            border: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            border: 1px solid #70dbf6;
             position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .leetcode-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #00ffd0;
         }
 
         .leetcode-section::before {
-            content: '💻';
             position: absolute;
             top: -20px;
             left: 50%;
@@ -668,11 +675,11 @@
         .contact-item:hover {
             transform: rotateY(10deg) translateY(-10px);
             border-color: #70dbf6;
+            box-shadow: 0 10px 30px rgba(12, 225, 185, 0.2);
         }
 
         .contact-item i {
             font-size: 3rem;
-            margin-bottom: 1rem;
             background: var(--neon-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -698,8 +705,15 @@
             transition: transform 0.3s ease;
         }
 
+        .contact-btn i {
+            font-size: 1rem;
+            background: none; 
+            -webkit-background-clip: unset; 
+            -webkit-text-fill-color: unset;
+        }
+
         .contact-btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(6px);
         }
 
         /* Footer */
@@ -961,9 +975,8 @@
     </section>
 
     <section class="section">
-        <h2>LeetCode Profile</h2>
         <div class="leetcode-section">
-            <h3>🏆 Solved 150+ Questions</h3>
+            <h3>🏆 LeetCode Journey</h3>
             <p>Passionate about algorithmic problem-solving and continuous learning through competitive programming challenges.</p>
             <button class="leetcode-btn" onclick="openLeetCode()">
                 <i class="fas fa-code"></i> View LeetCode Profile
@@ -993,7 +1006,9 @@
             </div>
             
             <div class="contact-item">
-                <i class="fab fa-github"></i>
+                <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                </div>
                 <h3>GitHub</h3>
                 <p>Explore my code</p>
                 <a href="https://github.com/drakshakhan" target="_blank" class="contact-btn">
@@ -1004,7 +1019,8 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Draksha Khan. All rights reserved. | Hyderabad, India</p>
+        <p>&copy; 2025 Draksha Khan. All rights reserved.</p>
+        <p>📍 Hyderabad, India</p>
     </footer>
 
     <script>
